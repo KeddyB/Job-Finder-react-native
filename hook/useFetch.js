@@ -13,9 +13,7 @@ const useFetch = (endpoint, query) => {
             'X-RapidAPI-Key': '263a750f75msh7dc12c85ae62e38p18bfc5jsn7a993fa69dab',
             'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
         },
-        params: {
-            ...query
-        },
+        params: { ...query },
     };
     const fetchData = async () => {
         setIsLoading(true)
@@ -39,6 +37,8 @@ const useFetch = (endpoint, query) => {
         setIsLoading(true)
         fetchData()
     }
+
+    console.log(options)
     return { data, isLoading, error, refetch}
 }
 
