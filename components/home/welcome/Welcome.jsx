@@ -19,7 +19,12 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
       </View>
       <View style={styles.searchContainer}>
         <View style= {styles.searchWrapper}>
-          <TextInput style= {styles.searchInput} value={searchTerm} onChange={(text) => {setSearchTerm(text)}} placeholder='What job are you looking for?' />
+          <TextInput
+            style={styles.searchInput}
+            value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
+            placeholder='What are you looking for?'
+          />
         </View>
         <TouchableOpacity style= {styles.searchBtn} onPress={handleClick}>
           <Image source={icons.search} resizeMode='contain' style={styles.searchBtnImage}/>
