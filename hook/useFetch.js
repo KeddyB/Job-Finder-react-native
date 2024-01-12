@@ -38,7 +38,6 @@ const useFetch = (endpoint, query) => {
         fetchData()
     }
 
-    console.log(options)
     return { data, isLoading, error, refetch}
 }
 
