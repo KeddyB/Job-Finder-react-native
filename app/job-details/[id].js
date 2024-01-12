@@ -16,7 +16,19 @@ const JobDetails = () => {
   const [activeTab, setActiveTab] = useState(tabs[0])
 
   const onRefresh = () =>{
-    
+    setRefreshing(true)
+  }
+  const displayTabContent = () => {
+    switch(activeTab){
+      case "Qualification":
+        return <Specifics title="Qualifications" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+        
+      case "About":
+        return <Specifics title="About" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+        
+      case "Responsibilities":
+        return <Specifics title="Responsibilitites" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+    }
   }
 
   const {data, isLoading, error, refetch } = useFetch('job-details', {job_id: params.id})
@@ -48,7 +60,7 @@ const JobDetails = () => {
             <Text>No data</Text>
           )
           : (
-            <View>
+            <View style={{padding: SIZES.medium, paddingBottom: 100 }}>
               <Company
                 companyLogo = {data[0].employer_logo}
                 jobTitle = {data[0].job_title}
@@ -60,6 +72,7 @@ const JobDetails = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
+              {displayTabContent}
             </View>
           )}
         </ScrollView>
