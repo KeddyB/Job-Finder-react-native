@@ -21,13 +21,15 @@ const JobDetails = () => {
   const displayTabContent = () => {
     switch(activeTab){
       case "Qualification":
-        return <Specifics title="Qualifications" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+        return <Specifics
+          title="Qualifications"
+          points={data[0].job_highlights?.Qualifications ?? ['N/A']}/>;
         
       case "About":
-        return <Specifics title="About" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+        return <JobAbout info={data[0].job_description ?? "No data provided"}/>
         
       case "Responsibilities":
-        return <Specifics title="Responsibilitites" points={data[0].job_highlights?.qualifications ?? ['N/A']}/>
+        return <Specifics title="Responsibilitites" points={data[0].job_highlights?.Responsibilities ?? ['N/A']}/>
     }
   }
 
@@ -72,7 +74,7 @@ const JobDetails = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
-              {displayTabContent}
+              {displayTabContent()}
             </View>
           )}
         </ScrollView>
