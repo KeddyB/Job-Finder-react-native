@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.keddyb.JobFinder"
     },
     "web": {
       "bundler": "metro",
@@ -42,6 +43,12 @@
       "eas": {
         "projectId": "e5b44883-a930-4d89-88f7-200e5be48e82"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e5b44883-a930-4d89-88f7-200e5be48e82"
     }
   }
 }
